@@ -1,3 +1,5 @@
+package com.wordlefake;
+
 import java.io.*;
 import java.text.Normalizer;
 import java.util.regex.Pattern;
@@ -9,7 +11,8 @@ import java.util.Random;
 import java.nio.file.Files;
 import java.io.File;
 
-class Main {
+public class App  {
+	private ArrayList<String> words;
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		ArrayList<String> words = new ArrayList<String>();
@@ -30,7 +33,7 @@ class Main {
     
 		// jogo real
 		aux_word = (SelectFile(tamanho_palavra));
-    chosen_word = removeAccents(aux_word);
+    	chosen_word = removeAccents(aux_word);
 
 		System.out.println("LEGENDAS:\nX = NÃO CONSTA\nA = CONSTA, LOCAL ERRADO\nV = CONSTA, LOCAL CERTO\n");
     
@@ -120,6 +123,7 @@ class Main {
 
   //tratamento de exceção: palavra desconhecida
 	public static boolean ExistePalavra(String w) {
+		System.out.println(w);
 		List<String> wordsList = new ArrayList<String>();
 		try {
 			File wordFile = new File("TXT//br-utf8.txt"/*aux_word*/);
